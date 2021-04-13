@@ -1,6 +1,6 @@
 {
   "name": "@csquare/cloud-functions-utils",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Set of utilities to for Google Cloud Cloud Functions.",
   "keywords": [
     "google-cloud",
@@ -17,10 +17,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/"
+    "dist/**"
   ],
   "scripts": {
     "prepare": "husky install",
+    "prepublishOnly": "npm run build",
     "clean": "rimraf dist",
     "format": "prettier --write \"**/*.{js,ts,yml,yaml,json}\"",
     "format:check": "prettier --check \"**/*.{js,ts,yml,yaml,json}\"",
