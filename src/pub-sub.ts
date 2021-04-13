@@ -23,8 +23,7 @@ export function decodePubSubMessage<T>(message: PubSubMessage, parser: (raw: str
 /**
  * Encode a PubSub message.
  * @param data The data to encode.
- * @param serializer The data serializer, defaults to JSON.stringify.
  */
-export function encodePubSubMessage<T>(data: T, serializer: (data: T) => any = (noop) => noop): Buffer {
+export function encodePubSubMessage<T>(data: T): Buffer {
   return Buffer.from(JSON.stringify({ data: { message: data } }), 'utf-8');
 }
