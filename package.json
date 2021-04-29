@@ -20,7 +20,7 @@
     "dist/**"
   ],
   "scripts": {
-    "prepare": "husky install",
+    "prepare": " [ \"$NODE_ENV\"==\"production\" ]; echo \"$?\" || npx is-ci || husky install",
     "prepublishOnly": "npm run build",
     "clean": "rimraf dist",
     "format": "prettier --write \"**/*.{js,ts,yml,yaml,json}\"",
